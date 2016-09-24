@@ -11,8 +11,8 @@ add_filter( 'widget_text', 'do_shortcode' );
  */
 
 function md_child_theme_enqueue_style() {
-    wp_enqueue_style( 'marketers-delight', MD_URL . 'style.css' );
-    wp_enqueue_style( 'md-child-theme', get_stylesheet_uri() );
+	wp_enqueue_style( 'marketers-delight', MD_URL . 'style.css' );
+	wp_enqueue_style( 'md-child-theme', get_stylesheet_uri() );
 }
 
 add_action( 'wp_enqueue_scripts', 'md_child_theme_enqueue_style' );
@@ -46,3 +46,21 @@ function md_add_taxonomy_meta() {
 }
 
 //add_filter( 'md_taxonomy_meta', 'md_add_taxonomy_meta' );
+
+function get_this_year() {
+	return date('Y');
+}
+
+add_shortcode( 'this_year', 'get_this_year' );
+
+function linux_uptime() {
+	$ut = strtok( exec( 'cat /proc/uptime' ), '.' );
+	$days = sprintf( '%2d', ($ut/(3600*24)) );
+	$hours = sprintf( '%2d', ( ($ut % (3600*24)) / 3600) );
+	$min = sprintf( '%2d', ($ut % (3600*24) % 3600)/60 );
+	$sec = sprintf( '%2d', ($ut % (3600*24) % 3600)%60 );
+	$ut = array( $days, $hours, $min, $sec );
+	return 'Server Uptime: ' . $ut[0] . ' days, ' . $ut[1] . ' hours, ' . $ut[2] . ' minutes ' . $ut[3] . ' seconds.';
+}
+
+add_shortcode( 'uptime', 'linux_uptime' );

@@ -1,17 +1,54 @@
 /*
-	Theme Name:     My MD Child Theme
-	Theme URI:      http://mydomain.com/
-	Description:    A custom child theme for my site.
-	Author:         My name
-	Author URI:     https://mydomain.com/
-	Template:       marketers-delight
-	Version:        1.1
+Theme Name:     My MD Child Theme
+Theme URI:      http://mydomain.com/
+Description:    A custom child theme for my site.
+Author:         My name
+Author URI:     https://mydomain.com/
+Template:       marketers-delight
+Version:        1.1
 */
 
 
 /* LINKS */
 
 a {
-	color: #ae2525;
+	color: green;
 	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: #e55b36;
+}
+
+.text-sec, .tagline, .gfield_description, .ginput_complex label, .entry-subtitle {
+	color: #606060;
+}
+
+/* HEADER */
+.header {
+	background-color: #f4f4f4;
+	position: relative;
+	z-index: 60;
+}
+
+
+.logo, .tagline {
+	max-width: 333px;
+}
+
+p.tagline {
+	text-align: right;
+}
+
+/* FOOTER */
+
+.powered img {
+	max-height: 60px;
+	margin: -10px 0 0 10px;
+	vertical-align: middle;
+}
+
+.powered a {
+	border-bottom: none;
+	outline: none
 }
