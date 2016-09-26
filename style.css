@@ -13,10 +13,14 @@ Version:        1.1
 
 a {
 	color: green;
-	text-decoration: none;
+	text-decoration: none
 }
 
-a:hover, a:focus {
+.links-main a {
+	border-bottom: none
+}
+
+a:hover, a:focus, .toc_list a:hover {
 	color: #e55b36;
 }
 
@@ -51,4 +55,34 @@ p.tagline {
 .powered a {
 	border-bottom: none;
 	outline: none
+}
+
+/* IMG */
+
+.wp-caption-text {
+	border-bottom: none
+}
+
+/* TOC */
+.toc_wrap {
+	background-color: #ddd;
+	padding: 26px;
+	max-width: 338px;
+	text-align: left!important
+}
+
+.toc_wrap .toc_title {
+	color: #555;
+	font-size: 16px;
+	margin-bottom: 13px;
+	text-transform: uppercase;
+}
+
+.toc_list a {
+	color: #555;
+	border-bottom: none;
+}
+
+ul.toc_list ul {
+	margin: 0 0 9px 26px;
 }
