@@ -64,3 +64,19 @@ function linux_uptime() {
 }
 
 add_shortcode( 'uptime', 'linux_uptime' );
+
+
+/**
+ * Custom code starts here
+ * Below are my own code not Kolakube
+ */
+
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+function toc_shortcode( $atts, $content = null ) {
+	if (!is_front_page()) {
+		return '<div>' . $content . '</div>';
+	}
+}
+add_shortcode( 'toc', 'toc_shortcode' );
